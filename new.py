@@ -245,7 +245,7 @@ def get_color(count):
 
 # --- HOMEPAGINA ---
 if pagina == "Home":
-    st.title("✈️ Schiphol Vluchtdata Dashboard")
+    st.title("Schiphol Vluchtdata Dashboard")
     st.write("Gebruik het menu links om analyses te bekijken over vluchten, vertragingen en geografische verdeling vanuit Schiphol.")
     st.dataframe(df[['flightName', 'Luchthaven', 'Land', 'Continent', 'landingDelay']].head())
     st.dataframe(df[zichtbare_kolommen].head(15))
