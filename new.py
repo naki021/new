@@ -253,7 +253,7 @@ if pagina == "Home":
 
 # --- VLUCHTEN PER CONTINENT ---
 elif pagina == "Vluchten per Continent":
-    st.header("🌍 Vluchten per Continent")
+    st.header("Vluchten per Continent")
     geselecteerd = st.sidebar.selectbox("Kies continent:", ["Alle"] + sorted(df['Continent'].unique()))
     subset = df if geselecteerd == "Alle" else df[df['Continent'] == geselecteerd]
     fig = px.histogram(subset, x='Land', title=f"Aantal vluchten uit {geselecteerd}",
@@ -301,7 +301,7 @@ elif pagina == "Pier Analyse":
 
 # --- BESTEMMINGEN ANALYSE ---
 elif pagina == "Bestemmingen":
-    st.header("📍 Top Bestemmingen")
+    st.header("Top Bestemmingen")
     df_dest = df['Luchthaven'].value_counts().reset_index()
     df_dest.columns = ['Bestemming', 'Aantal Vluchten']
     # Kleurenschaal: hogere aantallen (druk) worden rood en lagere aantallen (rustig) groen
@@ -475,7 +475,7 @@ elif pagina == "Schiphol-kaart (live piers)":
 # ROUTE
 # ======---------
 elif pagina == "Routekaart vanuit Schiphol":
-    st.header("🌐 Routekaart vanuit Schiphol (ingekleurde landen - alleen vertrekvluchten)")
+    st.header("Routekaart vanuit Schiphol (ingekleurde landen - alleen vertrekvluchten)")
 
     # 🚀 Alleen vertrekvluchten ophalen (richting = D)
     df_vertrek = laad_data(geselecteerde_datum, richting="D")
